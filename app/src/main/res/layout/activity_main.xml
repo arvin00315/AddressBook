@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.arlan.addressbook.MainActivity">
+
+
+    <EditText
+        android:id="@+id/id_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/id_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile" />
+
+    <EditText
+        android:id="@+id/id_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email" />
+
+    <Button
+        android:id="@+id/id_add_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Contact"
+        android:onClick="addContact"/>
+    <Button
+        android:id="@+id/id_view_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Database" />
+
+    <EditText
+        android:id="@+id/id_search_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search" />
+
+    <Button
+        android:id="@+id/id_get_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Details"
+        android:onClick="getDataByName"/>
+
+
+
+</LinearLayout>
