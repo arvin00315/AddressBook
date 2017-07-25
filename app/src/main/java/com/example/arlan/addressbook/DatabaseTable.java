@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class DatabaseTable {
 
     DatabaseOpenHelper mDatabaseOpenHelper;
-    ArrayList<Data> mArrayData = new ArrayList<Data>();
+
 
     public DatabaseTable(Context context) {
         mDatabaseOpenHelper = new DatabaseOpenHelper(context);
@@ -83,6 +83,7 @@ public class DatabaseTable {
 
 
     public ArrayList<Data> getAllData() {
+        ArrayList<Data> arrayData = new ArrayList<Data>();
         SQLiteDatabase sqLiteDatabase = mDatabaseOpenHelper.getWritableDatabase();
 
         String[] columns = {DatabaseOpenHelper.UID, DatabaseOpenHelper.NAME, DatabaseOpenHelper.MOBILE, DatabaseOpenHelper.EMAIL};
@@ -94,9 +95,9 @@ public class DatabaseTable {
             String name = cursor.getString(1);
             int mobile = cursor.getInt(2);
             String email = cursor.getString(3);
-            mArrayData.add(new Data(name, mobile, email));
+            arrayData.add(new Data(name, mobile, email));
         }
-        return mArrayData;
+        return arrayData;
     }
 
 

@@ -3,6 +3,7 @@ package com.example.arlan.addressbook;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,19 +19,21 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends ArrayAdapter<Data> {
 
 
+
     public RecyclerAdapter(@NonNull Context context, @NonNull ArrayList<Data> objects) {
         super(context, 0, objects);
     }
 
 
     /*===================================================================================
-    *This function will keep on looping till the end of the data
+    *  This function will keep on executing while scrolling the list.
     *====================================================================================*/
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
+        Log.i("arvinsTag","list: "+listItemView);
         if(listItemView == null){
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.single_view, parent, false);
         }
