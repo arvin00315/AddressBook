@@ -1,5 +1,6 @@
 package com.example.arlan.addressbook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.add_contact_menu, menu);
         return true;
     }
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         switch(item.getItemId()){
             case R.id.add_contact:
-                addContact();
+                addContactView();
                 break;
         }
 
@@ -54,23 +55,12 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(recyclerAdapter);
     }
 
-    /*public void addContact(View view) {
-        String name = this.mName.getText().toString();
-        int mobile = Integer.parseInt(this.mMobile.getText().toString());
-        String email = this.mEmail.getText().toString();
 
-        long id = mArvinsHelper.insertData(name, mobile, email);
 
-        if (id < 0) {
-            Log.e("arvinsTag", "Unsuccessful");
-        } else {
-            Log.i("arvinsTag", "Insert Data Successful");
-        }
+    public void addContactView(){
+        Intent addContactIntent = new Intent(MainActivity.this, AddContact.class);
+        startActivity(addContactIntent);
 
-    }*/
-
-    public void addContact(){
-        Log.i("arvinsTag","add contact called");
     }
 
 

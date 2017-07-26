@@ -3,7 +3,6 @@ package com.example.arlan.addressbook;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,6 @@ public class RecyclerAdapter extends ArrayAdapter<Data> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
-        Log.i("arvinsTag","list: "+listItemView);
         if(listItemView == null){
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.single_view, parent, false);
         }
